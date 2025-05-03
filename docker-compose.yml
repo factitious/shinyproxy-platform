@@ -27,7 +27,7 @@ services:
       - bioapp-net
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
   shinyproxy:
-    image: shinyproxy-engine:latest
+    image: shinyproxy-engine
     depends_on:
       - observerspeciesapp
     container_name: shinyproxy
@@ -39,7 +39,7 @@ services:
     networks:
       - bioapp-net
   observerspeciesapp:
-    image: observed-species-app:latest
+    image: observed-species-app
 
 networks:
   bioapp-net:

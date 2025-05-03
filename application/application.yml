@@ -25,7 +25,7 @@ proxy:
     - id: biodiverse
       display-name: GBIF Observed Species App
       container-cmd: ["R", "-e", "shiny::runApp('/root/Shiny')"]
-      container-image: observed-species-app:latest
+      container-image: observed-species-app:
       access-groups: admins
       container-network: bioapp-net
 
